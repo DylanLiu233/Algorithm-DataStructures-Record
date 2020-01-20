@@ -26,6 +26,35 @@
 
 - Bubble Sort
 
+  ```c++
+  //In asceding order, written in C++
+  void swap(dataType *a, dataType *b)
+  {
+      dataType temp;
+      
+      temp = *a;
+      *a = *b;
+      *b = temp;
+  }
+  void InsertionSort(dataType arr[], int len)
+  {
+  	dataType key;
+      bool flag = true;
+  	
+  	for (int i = 0; flag == true; i++) {
+          flag = false;
+          for (int j = 0; j < len-i-1; j++) {
+              if (arr[j] > arr[j+1]) {
+                  swap(&arr[j], &arr[j+1]);
+                  flag = true;
+              }
+          }
+      }
+  }
+  ```
+
+  
+
 - Selection Sort
 
 - Shell Sort
