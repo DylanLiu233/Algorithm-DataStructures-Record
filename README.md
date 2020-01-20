@@ -17,9 +17,7 @@
               arr[j+1] = arr[j];
               j--;
           }
-          if (j >= 0) {
-              arr[j+1] = key;
-          }
+          arr[j+1] = key;
       }
   }
   ```
