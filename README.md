@@ -3,8 +3,33 @@
 ###  Elmentery Sorting
 
 - Insertion Sort
+
+  ```c++
+  //In asceding order, written in C++
+  void InsertionSort(dataType arr[], int len)
+  {
+      dataType key;
+      
+      for(int i = 0; i < len; i++) {
+          key = arr[i];
+          int j = i-1;
+  		while (j >= 0 && key < arr[j]) {
+              arr[j+1] = arr[j];
+              j--;
+          }
+          if (j >= 0) {
+              arr[j+1] = key;
+          }
+      }
+  }
+  ```
+
+  
+
 - Bubble Sort
+
 - Selection Sort
+
 - Shell Sort
 
 ### Stack
