@@ -184,7 +184,7 @@
       int j = 0;
       //attention: not 'int k = 0'
       for (int k = left; k < right; k++) {
-          if (L[i] >= R[j]) {
+          if (L[i] <= R[j]) {
               arr[k] = L[i];
               i++;
           }
