@@ -5,7 +5,7 @@
 - Insertion Sort
 
   ```c++
-  //In asceding order, written in C++
+  //In ascending order, written in C++
   //Time complexity: O(n^2)
   void InsertionSort(dataType arr[], int len)
   {
@@ -28,7 +28,7 @@
 - Bubble Sort
 
   ```c++
-  //In asceding order, written in C++
+  //In ascending order, written in C++
   //Time complexity: O(n^2)
   void swap(dataType *a, dataType *b)
   {
@@ -60,7 +60,7 @@
 - Selection Sort
 
   ```c++
-  //In asceding order, written in C++
+  //In ascending order, written in C++
   //Time complexity: O(n^2)
   void SelectionSort(dataType arr[], int len)
   {
@@ -83,7 +83,7 @@
 - Shell Sort
 
   ```c++
-  //In asceding order, written in C++
+  //In ascending order, written in C++
   //Time complexity: O(n^1.25)
   void InsertionSort(dataType arr[], int len, int interval)
   {
@@ -151,4 +151,103 @@
 ### Recursion, Divide and Conquer
 
 - Exhaustive Search
-- 
+
+
+
+### Advanced Sorting
+
+- Merge Sort
+
+  ```c++
+  //In ascending order, witten in C++
+  //Time Complexity: O(nlogn)
+  #define INF 99999999 //a flag
+  void merge(dataType arr[], int left, int mid, int right)
+  {
+      int n1 = mid - left;
+      int n2 = right - mid;
+      int L[n1+1];
+      int R[n2+1];
+      
+      //set the boundary
+      L[n1] = R[n2] = INF;
+      for (int i = 0; i < n1; i++) {
+          //attention: not 'arr[i]'
+          L[i] = arr[left+i];
+      }
+      for (int i = 0; i < n2; i++) {
+          //attention: not 'arr[i]'
+          R[i] = arr[mid+i];
+      }
+      
+      int i = 0;
+      int j = 0;
+      //attention: not 'int k = 0'
+      for (int k = left; k < right; k++) {
+          if (L[i] >= R[j]) {
+              arr[k] = L[i];
+              i++;
+          }
+          else {
+              arr[k] = R[j];
+              j++;
+          }
+      }
+  }
+  void MergeSort(dataType arr[], int left, int right)
+  {
+      //two elements left at least
+      if (left+1 < right) {
+          int mid = (left+right)/2;
+          MergeSort(arr, left, mid);
+          MergeSort(arr, mid, right);
+          merge(arr, left, mid, right);
+      }
+  }
+  ```
+
+  
+
+- Quick Sort
+
+  ```c++
+  //In ascending order, written in C++
+  //Time complexity: O(nlogn)
+  void swap(dataType *a, dataType *b)
+  {
+      dataType temp;
+      
+      temp = *a;
+      *a = *b;
+      *b = temp;
+  }
+  int Partition(dataType arr, int start, int end)
+  {
+      //choose the last one to be the pivot
+      int pivotValue = arr[end];
+      int i = start-1;	//the rear index of smaller part
+      
+      for (int j = 0; j < end; j++) {
+          if (arr[j] <= pivotValue) {
+              i++;
+              swap(&arr[j], &arr[i]);
+          }
+      }
+      //place the pivot element between smaller part and bigger part
+      swap(&arr[i+1], &arr[end]);
+      
+      return i+1;		//return the index of pivot
+  }
+  void QuickSort(dataType arr[], int start, int end)
+  {
+      if (start < end) {
+          int pivotIndex = Partition(arr, start, end);
+          QuickSort(arr, start, pivotIndex-1);
+          QuickSort(arr, pivotIndex+1, end);
+      }
+  }
+  ```
+
+  
+
+- Counting Sort
