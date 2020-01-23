@@ -159,7 +159,7 @@
 - Merge Sort
 
   ```c++
-  //In ascending order, written in C++
+  //In ascending order, witten in C++
   //Time Complexity: O(nlogn)
   #define INF 99999999 //a flag
   void merge(dataType arr[], int left, int mid, int right)
@@ -251,3 +251,39 @@
   
 
 - Counting Sort
+
+  ```c++
+  //In ascending order, written C++
+  //Time complexity: O()
+  void CountingSort(int A[], int B[], int len, int maxNum)
+  {
+      //A[] is the array of original data (1 <= index <= len-1)
+      //B[] is the array of sorted data (1 <= index <= maxNum)
+      //Attention: A[0], B[0] were not used
+      
+      int C[maxNum+1];	// (0 <= index <= maxNum)
+      
+      //Initialize C[]
+      for (int i = 0; i <= maxNum; i++) {
+          C[i] = 0;
+      }
+      
+      //Count 0~maxNum
+      for (int i = 1; i <= len-1; i++) {
+          C[A[i]]++;
+      }
+      
+      for (int i = 1; i <= maxNum; i++) {
+          C[i] = C[i] + C[i-1];
+      }
+      
+      //The reason why iterate from len-1 to 1 is to 
+      //make sure the algorithm is stable.
+      for (int i = len-1; i >= 1; i--) {
+          B[C[A[i]]] = A[i];
+          C[A[i]]--;
+      }
+  }
+  ```
+
+  
