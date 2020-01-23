@@ -159,7 +159,7 @@
 - Merge Sort
 
   ```c++
-  //In ascending order, witten in C++
+  //In ascending order, written in C++
   //Time Complexity: O(nlogn)
   #define INF 99999999 //a flag
   void merge(dataType arr[], int left, int mid, int right)
