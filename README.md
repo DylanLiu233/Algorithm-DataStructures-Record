@@ -125,8 +125,25 @@
 ### 栈 Stack
 
 - C语言实现栈 Implement in C Language
+
 - C++标准模板库中的栈 Implement with STL of C++ (__stack__)
+
+  ```c++
+  #include <iostream>
+  #include <stack>
+  using namespace std;
+  {
+      
+      
+      
+      
+  }
+  ```
+
+  
+
 - 表达式的转换 Expression conversion (__prefix, infix, suffix__)
+
 - 表达式求值 Expression evaluation
 
 ### 队列 Queue
@@ -334,6 +351,7 @@
   ```c++
   //written in C++
   #include <iostream>
+  using namespace std;
   #define NIL -1
   #define MAXN 100000
   
