@@ -420,7 +420,7 @@
       for (int i = 0; i < n; i++) {
           T[i].parent = T[i].leftChild = T[i].sibling = NIL;
       }
-  	readTree(T, n);
+      readTree(T, n);
       getDepth(T, depth, n);
       printTree(T, depth, n);
   }
