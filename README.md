@@ -298,7 +298,7 @@
       dataType parent;
       dataType leftChild;
       dataType sibling;
-} Node;
+  } Node;
   如果采用数组存储，那么dataType就是int类型，表示结点在数组中的下标。
   如果采用链式存储，那么dataType是结点的指针类型，用于保存结点的地址。
   parent指向该结点的父结点，leftChild指向该结点最左边的子结点，
